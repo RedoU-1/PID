@@ -6,6 +6,7 @@ package com.example.PID.reservationsspringboot.repository;
 
 import com.example.PID.reservationsspringboot.model.User;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,9 +14,12 @@ import org.springframework.data.repository.CrudRepository;
  * @author redou
  */
 public interface UserRepository extends CrudRepository<User, Long> {
-	User findByLogin(String login);
-	List<User> findByLastname(String lastname);
-	 
-	User findById(long id);
-}
 
+    User findByLogin(String login);
+
+    List<User> findByLastname(String lastname);
+
+    User findById(long id);
+
+    Optional<User> findByEmail(String email);
+}
